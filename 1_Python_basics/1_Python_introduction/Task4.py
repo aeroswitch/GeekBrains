@@ -17,4 +17,7 @@ while num > 10:
     elif check_num > max_num:
         max_num = check_num
     num = num // 10
+    if 10 > num > max_num:
+        max_num = num
+
 print(f'Самое большое число в цифре: {max_num}')
