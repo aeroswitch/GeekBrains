@@ -6,7 +6,6 @@
 """
 
 
-# kwargs!
 def fsb(first_name, last_name, birth_date, city, email, phone):
     print(f'Имя: {first_name}, фамилия: {last_name}, год рождения: {birth_date}, город проживания: {city}, '
           f'емейл: {email}, телефон: {phone}')
