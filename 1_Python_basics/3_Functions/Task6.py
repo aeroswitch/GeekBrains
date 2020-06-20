@@ -7,9 +7,8 @@
 """
 
 
-# посмотреть как работает склеивание ''.join(sentence).split()
-
 def int_func(word):
+    """принимает слово из маленьких латинских букв и возвращает его же, но с заглавной первой буквой"""
     word = list(word)
     if 96 < ord(word[0]) < 123:
         word[0] = chr(ord(word[0]) - 32)
@@ -17,17 +16,23 @@ def int_func(word):
     return word
 
 
+# проверка
+print(int_func(input('Введите слово состоящее из маленьких латинских буквы: ')))
+
+
 def capital_sentence():
+    """принимает строку из маленьких латинских букв и возвращает ее же, но с каждое слово с большой буквы"""
     sentence = list(input('Введите строку из слов состоящих из латинских букв нижнего регистра. Слова разделите '
                           'пробелами: '))
     sentence = ''.join(sentence).split()
-    print(sentence)
     x = 0
     for i in sentence:
         i = int_func(i)
         sentence[x] = i
         x += 1
-    return sentence
+    result = ' '.join(sentence)
+    return result
 
 
+# проверка
 print(capital_sentence())
