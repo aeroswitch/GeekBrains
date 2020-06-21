@@ -20,3 +20,26 @@ for i in range(len(user_list)):
         user_list[n], user_list[n + 1] = user_list[n + 1], user_list[n]
         n += 2
 print(f'Перевернутый список:\n{user_list}')
+
+
+#  -------------------------------------------------------- 2 ----------------------------------------------------------
+
+
+my_list = list(input("Enter the numbers without space - "))
+
+for i in range(1, len(my_list), 2):
+    my_list[i - 1], my_list[i] = my_list[i], my_list[i - 1]
+
+print(my_list)
+
+#  ------------------------------------------- вариант решения ---------------------------------------------------------
+
+
+a = input('Введите элементы для массива разделяя их пробелами: ').split()
+i = 0
+print(f'Оригинальный список {a}')
+while i + 1 < len(a):
+    if i % 2 == 0:
+        a.insert(i, a.pop(i + 1))
+    i += 1
+print(f'Измененный список {a}')
