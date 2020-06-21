@@ -7,3 +7,31 @@ user_str = input('Введите строку из нескольких слов
 result = user_str.split()
 for ind, el in enumerate(result, 1):
     print(f'{ind}) {el[:10]}')
+
+#  -------------------------------------------------------- 4 ----------------------------------------------------------
+
+
+string = (input("Enter the numbers with space - ")).split()
+print(string)
+
+for i in range(len(string)):
+    if len(string[i]) <= 10:
+        print(i, string[i])
+    else:
+        print(i, (string[i])[:10])
+
+#  ------------------------------------------- вариант решения ---------------------------------------------------------
+
+
+string = (input("Enter the numbers with space - ")).split()
+
+for n, i in enumerate(string, 1):
+    print(n, i) if len(i) <= 10 else print(n, (i[:10]))
+
+#  ------------------------------------------- вариант решения ---------------------------------------------------------
+
+
+my_string = input('Введите строку из нескольких слов, разделенных пробелами: ').split()
+
+for i, word in enumerate(my_string, 1):
+    print(f'{i} {word[:10]}')
