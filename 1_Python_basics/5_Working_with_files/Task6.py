@@ -20,7 +20,7 @@ with open('text_6.txt', 'r', encoding='utf-8') as f:
     content_lines = f.readlines()
     n = 0
     for x in content_lines:
-        # we'll use re.findall to quickly find all the hours in the file
+        # we'll use re.findall to calculate the hours in the file in one code line
         hours = [int(x) for x in re.findall('[0-9]+', content_lines[n])]
         # assign a subject as a key and sum of found hours as a value
         subjects[x.strip().split(':')[0]] = sum(hours)

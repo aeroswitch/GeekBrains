@@ -53,7 +53,7 @@ with open('text_7.txt', 'r', encoding='utf-8') as f:
 
 # serializing to JSON
 with open('text_7.json', 'w', encoding='utf-8') as j:
-    # two additional arguments are requested: indent for prettifying JSON and ensure_ascii to show russian letters
+    # two additional arguments are required: 'indent' for prettifying JSON and 'ensure_ascii' to show russian letters
     json.dump(result, j, indent=4, ensure_ascii=False)
     print(f'JSON file is created with the following formatting:\n{json.dumps(result, indent=4, ensure_ascii=False)}')
 

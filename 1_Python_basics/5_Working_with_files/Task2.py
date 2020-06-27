@@ -8,7 +8,7 @@ with open('text_1.txt', 'r+', encoding='utf-8') as f:
     # add few new strings to the existing file from Task 1
     f.write('Adding a text string to the end of the file\n')
     f.write('Adding another one\n')
-    # after 'write' operation, the point will be located at the end of the file, so need to return it to the start
+    # after 'write' operation, the pointer will be located at the end of the file, so need to return it to the start
     f.seek(0)
     print(f'Quantity of strings in the file text_1.txt: {len(f.readlines())}')
     # returning pointer again

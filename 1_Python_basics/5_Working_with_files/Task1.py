@@ -12,4 +12,3 @@ with open('text_1.txt', 'w', encoding='utf-8') as f:
         if not user_str:
             break
     print('Content was written to the file text_1.txt')
-

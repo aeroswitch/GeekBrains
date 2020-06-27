@@ -17,7 +17,7 @@ with open('text_5.txt', 'w+') as f:
     content = f.readlines()
     n = 0
     result = 0
-    # reading the content as numbers and calculating its sum
+    # reading the content as numbers and calculating their sum
     for x in content:
         numbers = x.strip().split()
     for y in numbers:
