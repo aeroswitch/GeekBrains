@@ -25,6 +25,7 @@ print(f'Numbers to translate: {numbers}')
 with open('text_4_RU.txt', 'w+', encoding='utf-8') as r:
     n = 0
     for y in range(0, 4):
+        # we'll use Google translator for converting EN numbers to RU numbers
         r.write(file_translate.translate(numbers[n], dest='ru').text)
         r.write(' - ')
         r.write(str(n + 1))
