@@ -18,3 +18,10 @@ print(f'Original list:\n{random_list}')
 # let's use zip() with [1:] slice for second list to get a neighbour elements for comparison
 new_list = [e2 for e1, e2 in zip(random_list, random_list[1:]) if e2 > e1]
 print(f'Updated list:\n{new_list}')
+
+# #  -------------------------------------------------------- 2 ----------------------------------------------------------
+#
+#
+# my_list = [15, 16, 2, 3, 1, 7, 5, 4, 10]
+# more_than = [my_list[num] for num in range(1, len(my_list)) if my_list[num] > my_list[num - 1]]
+# print(more_than)

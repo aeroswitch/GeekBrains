@@ -20,3 +20,20 @@ print('Hours worked:', production_hours)
 print('Rate per hour: ', hour_rate)
 print('Bonus: ', bonus)
 print(f'Final salary: {salary()}')
+
+
+# #  -------------------------------------------------------- 1 ----------------------------------------------------------
+#
+#
+# from sys import argv
+#
+#
+# def salary():
+#     try:
+#         time, stavka, premia = map(int, argv[1:])
+#         print(f"Salary - {time * stavka + premia}")
+#     except ValueError:
+#         print("Enter all 3 numbers. Not string or empty character.")
+#
+#
+# salary()

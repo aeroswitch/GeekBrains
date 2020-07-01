@@ -25,3 +25,28 @@ with open('text_5.txt', 'w+') as f:
         n += 1
 
     print(f'Sum of all the numbers in the file is {result}')
+
+# #  -------------------------------------------------------- 5 --------------------------------------------------------
+#
+#
+# from random import randint
+#
+# sum_el = 0
+# with open("text.txt", "w", encoding="utf-8") as my_file:
+#     for i in range(100):
+#         el = randint(1, 100)
+#         sum_el += el
+#         my_file.write(str(el) + " ")
+#
+# print(f"Sum of elements - {sum_el}")
+#
+# #  ------------------------------------------- вариант решения -------------------------------------------------------
+#
+#
+# from random import randint
+#
+# num_str = " ".join([str(randint(1, 1000)) for _ in range(100000)])
+# with open('task_5_file.txt',  mode='w+', encoding='utf-8') as the_file:
+#     the_file.write(num_str)
+#     the_file.seek(0)
+#     print(sum(map(int, the_file.readline().split())))
