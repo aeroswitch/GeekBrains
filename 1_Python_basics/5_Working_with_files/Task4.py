@@ -33,3 +33,13 @@ with open('text_4_RU.txt', 'w+', encoding='utf-8') as r:
         n += 1
     r.seek(0)
     print(f'New file with translated content: {r.readlines()}')
+
+# #  ------------------------------------------- вариант решения ---------------------------------------------------------
+#
+#
+# from googletrans import Translator
+#
+# with open("text_4_translate.txt", 'w', encoding='utf-8') as f:
+#     with open("text_4.txt", 'r', encoding='utf-8') as f1:
+#         text = f1.read()
+#     f.write(Translator().translate(text, dest='ru').text)

@@ -29,3 +29,38 @@ def fact_generator(n):
 print(f'Factorials of numbers from 1! to {user_number}! are:')
 for el in fact_generator(user_number):
     print(el)
+# #  -------------------------------------------------------- 7 ----------------------------------------------------------
+#
+# from itertools import count
+# from math import factorial
+#
+#
+# def fact_gen():
+#     for el in count(1):
+#         yield factorial(el)
+#
+#
+# generator = fact_gen()
+# x = 0
+# for i in generator:
+#     if x == 15:
+#         break
+#     else:
+#         x += 1
+#         print(f"Factorial {x} = {i}")
+#
+#
+# #  ------------------------------------------- вариант решения ---------------------------------------------------------
+#
+#
+# def fact_gen(n):
+#     m = 1
+#     for i in range(1, n):
+#         if i > 15:
+#             break
+#         m *= i
+#         yield m
+#
+#
+# for i in fact_gen(26):
+#     print(i)

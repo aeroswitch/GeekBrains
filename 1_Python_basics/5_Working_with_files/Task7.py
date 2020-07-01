@@ -57,6 +57,43 @@ with open('text_7.json', 'w', encoding='utf-8') as j:
     json.dump(result, j, indent=4, ensure_ascii=False)
     print(f'JSON file is created with the following formatting:\n{json.dumps(result, indent=4, ensure_ascii=False)}')
 
-
-
-
+# #  -------------------------------------------------------- 7 --------------------------------------------------------
+#
+#
+# import json
+#
+# result = []
+# with open("my_ex7.json", "w", encoding="utf-8") as write_f:
+#     with open("text_7.txt", encoding="utf-8") as f_obj:
+#         profit = {}
+#         for line in f_obj:
+#             profit[line.split(' ')[0]] = int(line.split(' ')[2]) - int(line.split(' ')[3])
+#         average_profit = sum([int(i) for i in profit.values() if int(i) > 0]) / len(
+#             [int(i) for i in profit.values() if int(i) > 0])
+#         result.append(profit)
+#         result.append({"average_profit": round(average_profit)})
+#     json.dump(result, write_f)
+#
+# #  ------------------------------------------- вариант решения -------------------------------------------------------
+#
+#
+# import json
+#
+# with open("text_77.json", "w", encoding='utf-8') as j_file:
+#     with open('text_7.txt', encoding='utf-8') as my_file:
+#         subjects = {}
+#         middle = {}
+#         k, o = 0, 0
+#         line = my_file.read().split("\n")
+#         for i in line:
+#             i = i.split()
+#             profit = int(i[2]) - int(i[3])
+#             subjects[i[0]] = profit
+#             if profit > 0:
+#                 k += profit
+#                 o += 1
+#             middle["average_profit"] = k / o
+#         all_list = [subjects, middle]
+#     json.dump(all_list, j_file, ensure_ascii=False, indent=4)
+#
+# print(f"All information on firms:\n{line}\n\nTotal list:\n{all_list}")

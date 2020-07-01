@@ -64,3 +64,67 @@ try:
         print(a)
 except NameError:
     print('Error: starting number was not specified correctly')
+
+# #  -------------------------------------------------------- 6 ----------------------------------------------------------
+#
+#
+# from itertools import count, cycle
+#
+# print('Программа генерирует целые числа, начиная с указанного. Для генерации следующего числа необходимо нажать Enter,'
+#       ' для выхода из программы - "q"')
+# for i in count(int(input('Введите стартовое число: '))):
+#     print(i, end='')
+#     quit = input()
+#     if quit == 'q':
+#         break
+#
+# print(
+#     'Программа повторяет элементы списка. Для генерации следующего повторения необходимо нажать Enter, для выхода'
+#     ' из программы - "q"')
+# u_list = input('Введите список, разделяя элементы пробелом: ').split()
+# iter = cycle(u_list)
+# quit = None
+#
+# while quit != 'q':
+#     print(next(iter), end='')
+#     quit = input()
+#
+# #  ------------------------------------------- вариант решения ---------------------------------------------------------
+#
+#
+# from itertools import islice, cycle, count
+#
+#
+# def unexpected(start_el, stop_el, num_str):
+#     try:
+#         start_el, stop_el, num_str = int(start_el), int(stop_el), int(num_str)
+#         my_list = [el for el in islice(count(), start_el, stop_el + 1)]
+#         #  repeat_list = [next(cycle(my_list)) for el in range(num_str)]
+#         r_list = iter(el for el in cycle(my_list))
+#         repeat_list = [next(r_list) for _ in range(num_str)]
+#         print(my_list)
+#         return repeat_list
+#     except ValueError:
+#         return "Value Error"
+#     except TypeError:
+#         return "TypeError"
+#
+#
+# print(unexpected(input("List starting at - "), input("from to - "), input("Number of repetition - ")))
+#
+# #  ------------------------------------------- вариант решения ---------------------------------------------------------
+#
+#
+# from itertools import count, cycle
+#
+# progr_lang = list(input("Введите через пробел ТОП 5 языков программирования: ").split())
+#
+# # создаем бесконечный итератор из списка языков программирования введенным пользователем
+# iter = cycle(progr_lang)
+#
+# # выводим с помощью итератора count с ограничением, чтобы не уйти в бесконечный цикл
+# for n in count():
+#     if n > 10:
+#         break
+#     else:
+#         print(f"{n} - {next(iter)}")
