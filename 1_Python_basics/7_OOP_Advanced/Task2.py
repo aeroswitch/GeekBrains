@@ -74,3 +74,89 @@ print(f'Result of calculation for tissue consumption is {saint_laurent.tissue_co
 
 
 print(f'Total tissue consumption of both objects is {burberry + saint_laurent}')
+
+# #  -------------------------------------------------------- 2 --------------------------------------------------------
+#
+#
+# from abc import ABC, abstractmethod
+#
+#
+# class Clothes(ABC):
+#     def __init__(self, param):
+#         self.param = param
+#
+#     @abstractmethod
+#     def consumption(self):
+#         pass
+#
+#     def __add__(self, other):
+#         return self.consumption + other.consumption
+#
+#
+# class Coat(Clothes):
+#     @property
+#     def consumption(self):
+#         print(f"Consumption of fabric for sewing a coat - {round(self.param / 6.5) + 0.5}")
+#         return round(self.param / 6.5) + 0.5
+#
+# class Costume(Clothes):
+#     @property
+#     def consumption(self):
+#         print(f"Consumption of fabric for sewing a costume - {2 * self.param + 0.3}")
+#         return 2 * self.param + 0.3
+#
+# coat = Coat(42)
+# costume = Costume(170)
+# print(coat + costume)
+#
+# #  ------------------------------------------- вариант решения -------------------------------------------------------
+#
+#
+# from abc import ABC, abstractmethod
+#
+#
+# class MyAbstractClass(ABC):
+#     @abstractmethod
+#     def consumption(self):
+#         pass
+#
+#
+# class Clothes(MyAbstractClass):
+#     def __init__(self, param=100):
+#         self.param = param
+#
+#     @property
+#     def consumption_Coat(self, param):
+#         pass
+#
+#     @property
+#     def consumption_Costume(self, param):
+#         pass
+#
+#     @property
+#     def consumption(self):
+#         return self.consumption_Coat + self.consumption_Costume
+#
+#
+# class Coat(Clothes):
+#     @property
+#     def consumption(self):
+#         result = round(self.param / 6.5 + 0.5, 2)
+#         Clothes.consumption_Coat = result
+#         return f'Расход ткани для пальто - {self.param} размера = {round(self.param / 6.5 + 0.5, 2)}'
+#
+#
+# class Costume(Clothes):
+#     @property
+#     def consumption(self):
+#         result = round(2 * self.param + 0.3, 2)
+#         Clothes.consumption_Costume = result
+#         return f'Расход ткани для костюм - на рост {self.param} = {round(2 * self.param + 0.3, 2)}'
+#
+#
+# my_1 = Clothes()
+# my_2 = Coat(35)
+# print(my_2.consumption)
+# my_3 = Costume(183)
+# print(my_3.consumption)
+# print(f'Общий расход ткани = {my_1.consumption}')
