@@ -67,6 +67,8 @@ while True:
             vacancy_salary = vacancy.find('span', {'data-qa': 'vacancy-serp__vacancy-compensation'}).text
             vacancy_salary = unicodedata.normalize('NFKD', vacancy_salary)
             vacancy_salary_currency = (re.sub('[^рубUSD]', '', vacancy_salary)).upper()
+            if vacancy_salary_currency == 'РУБ':
+                vacancy_salary_currency = 'RUR'
             if min_salary_marker in vacancy_salary:
                 vacancy_salary_min = float(re.sub('\D+', '', vacancy_salary))
                 vacancy_salary_max = None
@@ -148,15 +150,21 @@ while True:
             vacancy_salary_min = re.sub('\D+', '', vacancy_salary)
             vacancy_salary_max = None
             vacancy_salary_currency = (re.sub('[^рубUSD]', '', vacancy_salary)).upper()
+            if vacancy_salary_currency == 'РУБ':
+                vacancy_salary_currency = 'RUR'
         elif max_salary_marker in vacancy_salary and agreement_salary_marker not in vacancy_salary:
             vacancy_salary_max = re.sub('\D+', '', vacancy_salary)
             vacancy_salary_min = None
             vacancy_salary_currency = (re.sub('[^рубUSD]', '', vacancy_salary)).upper()
+            if vacancy_salary_currency == 'РУБ':
+                vacancy_salary_currency = 'RUR'
         elif fork_salary_marker in vacancy_salary:
             vacancy_salary_fork = re.sub(' ', '', vacancy_salary)
             vacancy_salary_min = re.split('—', vacancy_salary_fork)[0]
             vacancy_salary_max = re.split('—', vacancy_salary_fork)[1].replace('руб./месяц', '')
             vacancy_salary_currency = (re.sub('[^рубUSD]', '', vacancy_salary)).upper()
+            if vacancy_salary_currency == 'РУБ':
+                vacancy_salary_currency = 'RUR'
         elif exact_salary_marker in vacancy_salary:
             vacancy_salary_min = re.sub('\D+', '', vacancy_salary)
             vacancy_salary_max = vacancy_salary_min

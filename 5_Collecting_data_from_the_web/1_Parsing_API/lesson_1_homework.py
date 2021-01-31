@@ -34,7 +34,8 @@ with open('API_response.json', 'w') as f:
 
 # After registering an API client in Acronis Cloud platform:
 client_id = '73d7a7a8-9e27-4032-9340-a6c9283a8cea'
-client_secret = 'f4d7d6a0bd4049708f17ee06d26a3891'
+client_secret = '' \
+                ''
 datacenter_url = 'https://eu2-cloud.acronis.com'
 base_url = f'{datacenter_url}/api/2'
 
